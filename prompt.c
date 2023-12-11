@@ -1,6 +1,6 @@
 #include "shell_header.h"
 
-int main(void)
+int prompt(void)
 {
 	char *buffer;
 	size_t n = 10;
