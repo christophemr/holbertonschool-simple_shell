@@ -6,7 +6,7 @@
  *
  * Return: Always 0.
  */
-int main(void)
+int ppid(void)
 {
     pid_t my_ppid;
 

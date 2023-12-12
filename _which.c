@@ -1,7 +1,7 @@
 #include "shell_header.h"
 #include <sys/stat.h>
 
-int main(int argc, char *argv[])
+int _which(int argc, char *argv[])
 {
 	const char *file_name = argv[1], *path = getenv("PATH");
 	char *dup_path, *token, fullPath[256];
