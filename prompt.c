@@ -1,17 +1,25 @@
 #include "shell_header.h"
 
-int main(void)
+char *prompt(void)
 {
-	char *buffer;
+	char *buffer, *exit = "exit\n";
 	size_t n = 10;
 	ssize_t line;
-
-	printf("$ ");
-	line = getline(&buffer, &n, stdin);
-	if (line == -1)
+	
+	while (1)
 	{
-		perror("can't read the command");
+		printf("(╭ರ_•́) ");
+		line = getline(&buffer, &n, stdin);
+		if (line == -1)
+		{
+			perror("Closing the shell");
+			break;
+		}
+		if(strcmp(buffer,exit) == 0)
+		{
+			break;
+		}
+		printf("%s", buffer);
 	}
-	printf("%s", buffer);
-	return (line);
+	return (buffer);
 }
