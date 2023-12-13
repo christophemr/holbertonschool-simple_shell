@@ -7,12 +7,24 @@ int main(void)
 	while (1)
 	{
 		printf("SS Shell ");
-		usrInput = get_user_input();
 
+		/*recupere l'input*/
+		usrInput = get_user_input();
+		
+		/*check si l'input n'a pas fonctionné pour quitter le shell*/
 		if (usrInput == NULL)
 			break;
-		printf("user input is: %s", usrInput);	
+		/*remplace le \n de l'input par \0 */
+		usrInput[strcspn(usrInput,"\n")] = '\0';
+
+		/*check si input est "exit" pour sortir*/
+		if(strcmp(usrInput, "exit") == 0)
+		{
+			free(usrInput);
+			break;
+		}
+		printf("user input is: %s\n", usrInput);
+		free(usrInput);
 	}
-	printf("\n");
 	return (0);
 }
