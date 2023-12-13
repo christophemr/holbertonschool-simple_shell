@@ -3,6 +3,8 @@
 int main(void)
 {
 	char *usrInput;
+	char **parsedInput;
+	int i;
 
 	while (1)
 	{
@@ -23,7 +25,10 @@ int main(void)
 			free(usrInput);
 			break;
 		}
-		printf("user input is: %s\n", usrInput);
+		/*coupe la string en token*/
+		parsedInput = parse_input(usrInput);
+		for (i = 0; parsedInput[i] != NULL; i++)
+			printf("token %d: %s\n",i, parsedInput[i]);
 		free(usrInput);
 	}
 	return (0);

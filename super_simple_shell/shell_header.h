@@ -11,6 +11,7 @@
 
 
 char *get_user_input();
+char **parse_input(char *str_input);
 
 
 
