@@ -11,7 +11,7 @@ int main(void)
 
 		if (usrInput == NULL)
 			break;
-	
+		printf("user input is: %s", usrInput);	
 	}
 	printf("\n");
 	return (0);
