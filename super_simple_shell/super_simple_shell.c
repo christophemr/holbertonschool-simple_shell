@@ -8,11 +8,12 @@ int main(void)
 
 	while (1)
 	{
-		printf("Perfect Shell ");
+		if (isatty(fileno(stdin)))
+			printf("Perfect Shell ");
 
 		/*recupere l'input*/
 		usrInput = get_user_input();
-		
+			
 		/*check si l'input n'a pas fonctionné pour quitter le shell*/
 		if (usrInput == NULL)
 			break;
