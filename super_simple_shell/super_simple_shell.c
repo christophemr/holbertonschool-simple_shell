@@ -8,7 +8,7 @@ int main(void)
 
 	while (1)
 	{
-		printf("SS Shell ");
+		printf("Perfect Shell ");
 
 		/*recupere l'input*/
 		usrInput = get_user_input();
@@ -27,8 +27,11 @@ int main(void)
 		}
 		/*coupe la string en token*/
 		parsedInput = parse_input(usrInput);
-		for (i = 0; parsedInput[i] != NULL; i++)
-			printf("token %d: %s\n",i, parsedInput[i]);
+		
+		if (parsedInput[0])
+			runcmd(parsedInput);
+
+
 		free(usrInput);
 	}
 	return (0);
