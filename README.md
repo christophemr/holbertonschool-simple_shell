@@ -71,4 +71,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## License
 
-This Simple Shell is licensed under the [MIT License](LICENSE). Feel free to use and modify it as needed.
+This Simple Shell is licensed under Holberton liscence. Ask the seahorse for permission
