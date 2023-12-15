@@ -27,6 +27,7 @@ This Simple Shell implementation provides basic functionality for executing comm
 Compiled using GCC.
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+```
 
 2. **Running the Shell:**
    - Run the compiled shell executable: `./hsh`
@@ -36,7 +37,6 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
    - Enter commands as you would in a regular shell.
    - Syntax : ```bash command {argument}```
    - Use the "exit" command  or <kbd>ctrl</kbd> + <kbd>D</kbd> to terminate the shell.
-```
 
 ## Example
 ```bash
