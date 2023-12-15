@@ -1,8 +1,7 @@
 #include "shell_header.h"
 
-extern char **environ;
 
-void runcmd(char **parsed_Input)
+void runcmd(char **parsed_Input, char **env)
 {
 	char *command_path;
 	pid_t child_pid;
@@ -24,7 +23,7 @@ void runcmd(char **parsed_Input)
 	}
 	if (child_pid == 0)
 	{
-		if(execve(command_path,parsed_Input, environ) == -1)
+		if(execve(command_path,parsed_Input, env) == -1)
 		{
 			perror("Execution failed");
 			free(command_path);

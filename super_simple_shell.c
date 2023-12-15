@@ -1,6 +1,6 @@
 #include "shell_header.h"
 
-int main(void)
+int main(char **env)
 {
 	char *usrInput;
 	char **parsedInput;
@@ -30,7 +30,7 @@ int main(void)
 		parsedInput = parse_input(usrInput);
 		
 		if (parsedInput[0])
-			runcmd(parsedInput);
+			runcmd(parsedInput, env);
 
 
 		free(usrInput);
