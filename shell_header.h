@@ -13,7 +13,7 @@
 
 char *get_user_input();
 char **parse_input(char *str_input);
-void runcmd(char **parsed_Input);
+void runcmd(char **parsed_Input, char **env);
 char *get_path(char *parsed_input);
 
 #endif

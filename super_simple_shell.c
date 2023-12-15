@@ -1,6 +1,6 @@
 #include "shell_header.h"
 
-int main(void)
+int main(char **env)
 {
 	char *usrInput;
 	char **parsedInput;
@@ -18,10 +18,10 @@ int main(void)
 		if (usrInput == NULL)
 			break;
 		/*remplace le \n de l'input par \0 */
-		usrInput[strcspn(usrInput,"\n")] = '\0';
+		usrInput[strcspn(usrInput, "\n")] = '\0';
 
 		/*check si input est "exit" pour sortir*/
-		if(strcmp(usrInput, "exit") == 0)
+		if (strcmp(usrInput, "exit") == 0)
 		{
 			free(usrInput);
 			break;
@@ -30,7 +30,7 @@ int main(void)
 		parsedInput = parse_input(usrInput);
 		
 		if (parsedInput[0])
-			runcmd(parsedInput);
+			runcmd(parsedInput, env);
 
 
 		free(usrInput);

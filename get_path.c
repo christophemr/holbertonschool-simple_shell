@@ -17,11 +17,9 @@ char *get_path(char *parsed_input)
 		perror("Duplication of path failed\n");
 		return (NULL);
 	}
-	/* coupe les dossier du path au char ':'*/
 	dir_name = strtok(dup_path, ":");
 	while (dir_name)
 	{
-		/*malloc le fullpath de la taille du dossier + char "/" + input + "\0"*/
 		fullpath = malloc(strlen(dir_name) + strlen(parsed_input) + 2);
 		if (fullpath == NULL)
 		{
@@ -29,19 +27,13 @@ char *get_path(char *parsed_input)
 			free(dup_path);
 			return (NULL);
 		}
-		/*ecrit "dir_name/parsed_input" dans le fullpath */
 		sprintf(fullpath, "%s/%s", dir_name, parsed_input);
-		/* si fullpath mene a un dossier, sort de la boucle */
 		if (stat(fullpath, &filestate) == 0)
-		{
 			break;
-		}
 		free(fullpath);
-		/*reset fullpath a null pour retourner null si pas de path correspondant*/
 		fullpath = NULL;
-		dir_name = strtok( NULL, ":");
+		dir_name = strtok(NULL, ":");
 	}
 	free(dup_path);
 	return (fullpath);
-
 }
