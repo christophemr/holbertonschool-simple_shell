@@ -1,4 +1,9 @@
 #include "shell_header.h"
+/*
+ * runcmd - Executes a command with optional path resolution
+ * @parsed_Input: Parsed command and arguments
+ * @env: Array of strings representing the environment variables
+ */
 
 
 void runcmd(char **parsed_Input, char **env)
