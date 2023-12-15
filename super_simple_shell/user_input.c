@@ -11,7 +11,7 @@ char *get_user_input()
 	if (inputSize == -1)
 	{
 		if (isatty(fileno(stdin)))
-			fprintf(stderr,"Closing Shell\n");
+			fprintf(stderr, "Closing Shell\n");
 		exit(EXIT_FAILURE);
 	}
 	return (input);
