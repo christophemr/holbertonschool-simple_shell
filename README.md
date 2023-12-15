@@ -66,7 +66,7 @@ The shell has been implemented using standard C libraries and system calls. No e
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## Authors
-[Christophe "Craig" Marie-Reine](https://github.com/christophemr)
+[Christophe "Craig" Marie-Reine](https://github.com/christophemr)\
 [Nicolas Taillpierre](https://github.com/TaillepierreN)
 
 ## License
