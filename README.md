@@ -6,11 +6,12 @@ This Simple Shell implementation provides basic functionality for executing comm
 
 1. [Features](#features)
 2. [Usage](#usage)
-3. [File Descriptions](#file-descriptions)
-4. [Dependencies](#dependencies)
-5. [Contributing](#contributing)
-6. [Authors](#Authors)
-6. [License](#license)
+3. [Example](#example)
+4. [File Descriptions](#file-descriptions)
+5. [Dependencies](#dependencies)
+6. [Contributing](#contributing)
+7. [Authors](#Authors)
+8. [License](#license)
 
 ## Features
 
@@ -35,6 +36,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
    - Enter commands as you would in a regular shell.
    - Syntax : ```bash command {argument}```
    - Use the "exit" command  or <kbd>ctrl</kbd> + <kbd>D</kbd> to terminate the shell.
+```
 
 ## Example
 ```bash
