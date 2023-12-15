@@ -1,5 +1,10 @@
 #include "shell_header.h"
 
+/*
+ * check_tokens - Checks the allocation of memory for tokens
+ * @tokens: Array of strings representing parsed input tokens
+ */
+
 void check_tokens(char **tokens)
 {
 	if (tokens == NULL)
@@ -8,6 +13,12 @@ void check_tokens(char **tokens)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/*
+ * parse_input - Parses input string into an array of tokens
+ *@str_input: Input string to be parsed
+ * Return: Array of tokens representing the parsed input
+ */ 
 
 char **parse_input(char *str_input)
 {
