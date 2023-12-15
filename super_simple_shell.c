@@ -15,7 +15,7 @@ int main(__attribute__((unused))int argc, __attribute__((unused))char *argv[],ch
 	while (1)
 	{
 		if (isatty(fileno(stdin)))
-			printf("Perfect Shell ");
+			printf("$ ");
 
 		/*recupere l'input*/
 		usrInput = get_user_input();
