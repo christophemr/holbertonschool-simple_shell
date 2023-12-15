@@ -1,5 +1,5 @@
 #include "shell_header.h"
-/*
+/**
  * runcmd - Executes a command with optional path resolution
  * @parsed_Input: Parsed command and arguments
  * @env: Array of strings representing the environment variables
@@ -16,7 +16,7 @@ void runcmd(char **parsed_Input, char **env)
 		command_path = strdup(parsed_Input[0]);
 	else
 		command_path = get_path(parsed_Input[0]);
-	if(command_path == NULL)
+	if (command_path == NULL)
 	{
 		printf("%s: command not found\n", parsed_Input[0]);
 		return;
@@ -28,7 +28,7 @@ void runcmd(char **parsed_Input, char **env)
 	}
 	if (child_pid == 0)
 	{
-		if(execve(command_path,parsed_Input, env) == -1)
+		if (execve(command_path, parsed_Input, env) == -1)
 		{
 			perror("Execution failed");
 			free(command_path);
