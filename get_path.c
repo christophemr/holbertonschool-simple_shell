@@ -1,5 +1,11 @@
 #include "shell_header.h"
 
+/**
+ * get_path - Searches for the full path of a command in the system's PATH
+ * @parsed_input: Command name for which to find the full path
+ * Return: Full path of the command if found, or NULL if not found
+ */
+
 char *get_path(char *parsed_input)
 {
 	char *path = getenv("PATH");
