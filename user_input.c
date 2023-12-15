@@ -1,5 +1,10 @@
 #include "shell_header.h"
 
+/**
+ * get_user_input - function to read a line of input from the standard input
+ * Return: the user's input
+ */
+
 char *get_user_input()
 {
 	char *input = NULL;
