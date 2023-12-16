@@ -1,5 +1,5 @@
 #include "shell_header.h"
-/*
+/**
  *main - main function for the simple shell
  *@argc: Number of command-line arguments (unused)
  *@argv: Array of command-line arguments (unused)
@@ -7,7 +7,9 @@
  *Return: 0 on success
  */
 
-int main(__attribute__((unused))int argc, __attribute__((unused))char *argv[],char **env)
+int main(__attribute__((unused))int argc,
+	__attribute__((unused))char *argv[],
+	char **env)
 {
 	char *usrInput;
 	char **parsedInput;
@@ -19,7 +21,7 @@ int main(__attribute__((unused))int argc, __attribute__((unused))char *argv[],ch
 
 		/*recupere l'input*/
 		usrInput = get_user_input();
-			
+
 		/*check si l'input n'a pas fonctionné pour quitter le shell*/
 		if (usrInput == NULL)
 			break;
@@ -34,7 +36,7 @@ int main(__attribute__((unused))int argc, __attribute__((unused))char *argv[],ch
 		}
 		/*coupe la string en token*/
 		parsedInput = parse_input(usrInput);
-		
+
 		if (parsedInput[0])
 			runcmd(parsedInput, env);
 
