@@ -49,7 +49,23 @@ int main(__attribute__((unused))int argc,
 
 
 		free(usrInput);
-		free(parsedInput);
+		free_tokens(parsedInput);
 	}
 	return (0);
+}
+
+/**
+ * free_tokens - free allocated memory
+ * @tokens: array to free
+ */
+
+void free_tokens(char **tokens)
+{
+	int i;
+
+	for (i = 0; tokens[i] != NULL; i++)
+	{
+		free(tokens[i]);
+	}
+	free(tokens);
 }
