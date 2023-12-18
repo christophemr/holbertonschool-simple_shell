@@ -35,7 +35,9 @@ char *get_path(char *parsed_input)
 		}
 		sprintf(fullpath, "%s/%s", dir_name, parsed_input);
 		if (stat(fullpath, &filestate) == 0)
+		{	
 			break;
+		}
 		free(fullpath);
 		fullpath = NULL;
 		dir_name = strtok(NULL, ":");

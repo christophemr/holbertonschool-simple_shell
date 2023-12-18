@@ -43,6 +43,7 @@ char **parse_input(char *str_input)
 		}
 		token = strtok(NULL, " \n");
 	}
+	free(token);
 	tokens[index] = NULL;
 	return (tokens);
 }
