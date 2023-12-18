@@ -18,8 +18,8 @@ int main(__attribute__((unused))int argc,
 	while (status)
 	{
 		status = isatty(0);
-		
-		if (status = 1)
+
+		if (status == 1)
 			printf("$ ");
 
 		/*recupere l'input*/
