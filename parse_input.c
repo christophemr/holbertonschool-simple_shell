@@ -31,6 +31,8 @@ char **parse_input(char *str_input)
 	while (token)
 	{
 		tokens[index] = strdup(token);
+		if (tokens[index] == NULL)
+			exit(EXIT_FAILURE);
 		index++;
 
 		if (index >= bufferSize)

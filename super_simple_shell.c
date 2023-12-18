@@ -39,7 +39,11 @@ int main(__attribute__((unused))int argc,
 		}
 		/*coupe la string en token*/
 		parsedInput = parse_input(usrInput);
-
+		if (parsedInput == NULL)
+		{
+			free(usrInput);
+			continue;
+		}
 		if (parsedInput[0])
 			runcmd(parsedInput, env, argv[0]);
 
