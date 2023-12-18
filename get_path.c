@@ -41,10 +41,5 @@ char *get_path(char *parsed_input)
 		dir_name = strtok(NULL, ":");
 	}
 	free(dup_path);
-
-	if (fullpath != NULL)
-	{
-		free(fullpath);
-	}	
 	return (fullpath);
 }
