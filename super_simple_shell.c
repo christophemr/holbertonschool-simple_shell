@@ -13,10 +13,13 @@ int main(__attribute__((unused))int argc,
 {
 	char *usrInput;
 	char **parsedInput;
+	int status = 1;
 
-	while (1)
+	while (status)
 	{
-		if (isatty(fileno(stdin)))
+		status = isatty(0);
+		
+		if (status = 1)
 			printf("$ ");
 
 		/*recupere l'input*/
