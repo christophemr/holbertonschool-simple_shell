@@ -8,7 +8,7 @@
  */
 
 int main(__attribute__((unused))int argc,
-	__attribute__((unused))char *argv[],
+	char *argv[],
 	char **env)
 {
 	char *usrInput;
@@ -38,7 +38,7 @@ int main(__attribute__((unused))int argc,
 		parsedInput = parse_input(usrInput);
 
 		if (parsedInput[0])
-			runcmd(parsedInput, env);
+			runcmd(parsedInput, env, argv[0]);
 
 
 		free(usrInput);
