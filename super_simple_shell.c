@@ -1,6 +1,6 @@
 #include "shell_header.h"
 /**
- *main - main function for the simple shell
+ *main - entry point of the simple shell
  *@argc: Number of command-line arguments (unused)
  *@argv: Array of command-line arguments (unused)
  *@env: Array of strings representing the environment variables
@@ -42,6 +42,7 @@ int main(__attribute__((unused))int argc,
 
 
 		free(usrInput);
+		free(parsedInput);
 	}
 	return (0);
 }
