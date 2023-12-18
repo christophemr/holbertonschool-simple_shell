@@ -33,7 +33,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
    - Run the compiled shell executable: `./hsh`
 
 3. **Using the Shell:**
-   - The shell prompt will be displayed as "Perfect Shell."
+   - The shell prompt will be displayed as "$ ."
    - Enter commands as you would in a regular shell.
    - Syntax : ```bash command {argument}```
    - Use the "exit" command  or <kbd>ctrl</kbd> + <kbd>D</kbd> to terminate the shell.
