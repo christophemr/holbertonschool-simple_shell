@@ -6,7 +6,7 @@
  */
 
 
-void runcmd(char **parsed_Input, char **env)
+void runcmd(char **parsed_Input, char **env, char *shellpath)
 {
 	char *command_path;
 	pid_t child_pid;
@@ -18,7 +18,10 @@ void runcmd(char **parsed_Input, char **env)
 		command_path = get_path(parsed_Input[0]);
 	if (command_path == NULL)
 	{
-		printf("%s: command not found\n", parsed_Input[0]);
+		if(isatty(fileno(stdin)))
+			printf("%s: %s: No such file or directory\n", shellpath, parsed_Input[0]);
+		else
+			printf("%s: 1: No such file or directory\n", shellpath);
 		return;
 	}
 	child_pid = fork();
