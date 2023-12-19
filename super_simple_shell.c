@@ -13,7 +13,7 @@ int main(__attribute__((unused)) int argc,
 {
 	char *usrInput;
 	char **parsedInput;
-	int status = 1;
+	int status = 1, isbuiltin = 0;
 
 	while (status)
 	{
