@@ -31,8 +31,6 @@ int main(__attribute__((unused)) int argc,
 		/*remplace le \n de l'input par \0 */
 		usrInput[strcspn(usrInput, "\n")] = '\0';
 		isbuiltin = check_builtin(usrInput, env);
-		if (isbuiltin == 2)
-			break;
 		if (isbuiltin == 0)
 		{
 			parsedInput = parse_input(usrInput);
