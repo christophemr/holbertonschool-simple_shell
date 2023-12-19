@@ -16,7 +16,7 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 		command_path = strdup(parsed_Input[0]);
 	else
 		command_path = get_path(parsed_Input[0]);
-	if (command_path == NULL)
+	if (command_path == NULL || access(command_path, X_OK) != 0)
 	{
 		if(isatty(fileno(stdin)))
 			fprintf(stderr, "%s: %s: No such file or directory\n", shellpath, parsed_Input[0]);
