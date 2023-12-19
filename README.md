@@ -21,6 +21,8 @@ This Simple Shell implementation provides basic functionality for executing comm
 - **Tokenization:** Parses user input into tokens for command execution.
 - **Exit Command:** Supports the "exit" command to terminate the shell.
 
+![Flowchart](simple_hell_flowchart1.png)
+
 ## Usage
 
 1. **Compilation:**
