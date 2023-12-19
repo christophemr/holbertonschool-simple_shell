@@ -16,6 +16,7 @@ char **parse_input(char *str_input);
 void runcmd(char **parsed_Input, char **env, char *shellpath);
 char *get_path(char *parsed_input);
 void free_tokens(char **tokens);
+int check_builtin(char *input, char **env);
 
 #endif
 

@@ -7,9 +7,9 @@
  *Return: 0 on success
  */
 
-int main(__attribute__((unused))int argc,
-	char *argv[],
-	char **env)
+int main(__attribute__((unused)) int argc,
+		 char *argv[],
+		 char **env)
 {
 	char *usrInput;
 	char **parsedInput;
@@ -30,26 +30,23 @@ int main(__attribute__((unused))int argc,
 			break;
 		/*remplace le \n de l'input par \0 */
 		usrInput[strcspn(usrInput, "\n")] = '\0';
-
-		/*check si input est "exit" pour sortir*/
-		if (strcmp(usrInput, "exit") == 0)
-		{
-			free(usrInput);
+		isbuiltin = check_builtin(usrInput, env);
+		printf("builtin: %d", isbuiltin);
+		if (isbuiltin == 2)
 			break;
-		}
-		/*coupe la string en token*/
-		parsedInput = parse_input(usrInput);
-		if (parsedInput == NULL)
+		if (isbuiltin == 0)
 		{
-			free(usrInput);
-			continue;
+			parsedInput = parse_input(usrInput);
+			if (parsedInput == NULL)
+			{
+				free(usrInput);
+				continue;
+			}
+			if (parsedInput[0])
+				runcmd(parsedInput, env, argv[0]);
+			free_tokens(parsedInput);
 		}
-		if (parsedInput[0])
-			runcmd(parsedInput, env, argv[0]);
-
-
 		free(usrInput);
-		free_tokens(parsedInput);
 	}
 	return (0);
 }
