@@ -46,7 +46,7 @@ char **parse_input(char *str_input)
 			tokens = realloc(tokens, bufferSize * sizeof(char *));
 			check_tokens(tokens);
 		}
-		token = strtok(NULL, " \n");
+		token = strtok(NULL, " \n\t\r\a");
 	}
 	free(token);
 	tokens[index] = NULL;
