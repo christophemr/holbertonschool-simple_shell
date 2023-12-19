@@ -27,7 +27,12 @@ char **parse_input(char *str_input)
 	char **tokens = malloc(bufferSize * sizeof(char *));
 
 	check_tokens(tokens);
-	token = strtok(str_input, " \n");
+	if (str_input == NULL || *str_input == '\0')
+	{
+		free(tokens);
+		return (NULL);
+	}
+	token = strtok(str_input, " \n\t\r\a");
 	while (token)
 	{
 		tokens[index] = strdup(token);
