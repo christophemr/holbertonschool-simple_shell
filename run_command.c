@@ -19,9 +19,9 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 	if (command_path == NULL)
 	{
 		if(isatty(fileno(stdin)))
-			printf("%s: %s: No such file or directory\n", shellpath, parsed_Input[0]);
+			fprintf(stderr, "%s: %s: No such file or directory\n", shellpath, parsed_Input[0]);
 		else
-			printf("%s: 1: No such file or directory\n", shellpath);
+			fprintf(stderr, "%s: 1: No such file or directory\n", shellpath);
 		return;
 	}
 	child_pid = fork();
@@ -29,6 +29,7 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 	{
 		perror("fork failed");
 		free(command_path);
+		exit((EXIT_FAILURE);
 	}
 	if (child_pid == 0)
 	{
@@ -40,7 +41,7 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 		}
 	} else
 	{
-		wait(&status);
+		waitpid(child_pid, &status, 0);
 		free(command_path);
 	}
 }
