@@ -17,10 +17,13 @@ char *get_user_input()
 	{
 		free(input);
 		if (feof(stdin))
-			exit(EXIT_SUCCESS);
+			return (NULL);
 		if (isatty(fileno(stdin)))
 			fprintf(stderr, "Closing Shell\n");
 		exit(EXIT_FAILURE);
 	}
+	if (inputSize > 0 && input[inputSize - 1] == '\n')
+		input[inputSize - 1] = '\0';
+
 	return (input);
 }

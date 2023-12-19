@@ -15,7 +15,7 @@ int main(__attribute__((unused)) int argc,
 	char **parsedInput;
 	int status = 1, isbuiltin = 0;
 
-	while (status)
+	while (1)
 	{
 		status = isatty(0);
 
@@ -29,7 +29,7 @@ int main(__attribute__((unused)) int argc,
 		if (usrInput == NULL)
 			break;
 		/*remplace le \n de l'input par \0 */
-		usrInput[strcspn(usrInput, "\n")] = '\0';
+		/*usrInput[strcspn(usrInput, "\n")] = '\0';*/
 		isbuiltin = check_builtin(usrInput, env);
 		if (isbuiltin == 0)
 		{
