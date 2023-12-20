@@ -36,31 +36,22 @@ $
 .SH EXAMPLE IN NON INTERACTIVE MODE
 .TP
 $ echo "/bin/ls" | ./hsh
-
 .TP
 hsh main.c shell.c test_ls_2
-
 .TP
 $
-
 .TP
 $ cat test_ls_2
-
 .TP
 /bin/ls
-
 .TP
 /bin/ls
-
 .TP
 $
-
 .TP
 $ cat test_ls_2 | ./hsh
-
 .TP
 hsh main.c shell.c test_ls_2
-
 .TP
 hsh main.c shell.c test_ls_2
 $
