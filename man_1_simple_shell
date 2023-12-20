@@ -16,10 +16,10 @@ The first arguments is understood to be the command to be run by Simple_shell an
 
 The user may quit the programm by typing "exit" or "ctrl + d" on the command line.
 
-.SH EXAMPLE
+.SH EXAMPLE IN INTERACTIVE MODE
 
 .TP
- ./simple_shell
+ ./hsh
 
 .TP 
 $ /bin/ls
@@ -31,6 +31,38 @@ README.md get_path.c parse_input.c run_command.c
 shell_header.h simple_shell.c user_input.c
 
 .TP
+$
+
+.SH EXAMPLE IN NON INTERACTIVE MODE
+.TP
+$ echo "/bin/ls" | ./hsh
+
+.TP
+hsh main.c shell.c test_ls_2
+
+.TP
+$
+
+.TP
+$ cat test_ls_2
+
+.TP
+/bin/ls
+
+.TP
+/bin/ls
+
+.TP
+$
+
+.TP
+$ cat test_ls_2 | ./hsh
+
+.TP
+hsh main.c shell.c test_ls_2
+
+.TP
+hsh main.c shell.c test_ls_2
 $
 
 .SH AUTHORS
