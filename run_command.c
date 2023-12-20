@@ -22,7 +22,7 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 			fprintf(stderr, "%s: %s: No such file or directory\n", shellpath, parsed_Input[0]);
 		else
 		{
-			fprintf(stderr, "%s: 1: %s: command not found\n", shellpath, parsed_Input[0]);
+			fprintf(stderr, "%s: 1: %s: not found\n", shellpath, parsed_Input[0]);
 			exit(127);
 		}
 		return;
