@@ -7,7 +7,7 @@ int check_builtin(char *input, char **env)
 	if (strcmp(input, "exit") == 0)
 	{
 		free(input);
-		exit(EXIT_SUCCESS);
+		exit(0);
 	}
 	if (strcmp(input, "env") == 0)
 	{
