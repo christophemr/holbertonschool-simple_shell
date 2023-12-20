@@ -23,6 +23,7 @@ void check_tokens(char **tokens)
 char **parse_input(char *str_input)
 {
 	int bufferSize = 128, index = 0;
+	char *tmp;
 	char *token;
 	char **tokens = malloc(bufferSize * sizeof(char *));
 
@@ -43,7 +44,13 @@ char **parse_input(char *str_input)
 		if (index >= bufferSize)
 		{
 			bufferSize *= 2;
-			tokens = realloc(tokens, bufferSize * sizeof(char *));
+			tmp = realloc(tokens, bufferSize * sizeof(char *));
+			if (tmp == NULL)
+			{
+				free(token);
+				free(tokens);
+				return (NULL);
+			}
 			check_tokens(tokens);
 		}
 		token = strtok(NULL, " \n\t\r\a");
