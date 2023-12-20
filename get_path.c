@@ -14,7 +14,6 @@ char *get_path(char *parsed_input)
 
 	if (path == NULL)
 	{
-		perror("PATH environment not found.\n");
 		return (NULL);
 	}
 	dup_path = strdup(path);

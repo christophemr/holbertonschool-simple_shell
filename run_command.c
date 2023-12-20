@@ -21,7 +21,7 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 		if(isatty(fileno(stdin)))
 			fprintf(stderr, "%s: %s: No such file or directory\n", shellpath, parsed_Input[0]);
 		else
-			fprintf(stderr, "%s: %s: 1: No such file or directory\n", shellpath, parsed_Input[0]);
+			fprintf(stderr, "%s: 1: %s: No such file or directory\n", shellpath, parsed_Input[0]);
 		return;
 	}
 	child_pid = fork();
