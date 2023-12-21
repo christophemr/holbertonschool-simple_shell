@@ -48,7 +48,8 @@ Interactive:
 	$ ls
 	get_path.c parse_input.c run_command.c shell_header.h super_simple_shell.c user_input.c
 	$
-Non interactive:```
+```
+Non interactive:
 ```bash
 	$ echo "/bin/ls" | ./hsh
 	get_path.c parse_input.c run_command.c shell_header.h super_simple_shell.c user_input.c
