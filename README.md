@@ -41,12 +41,14 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
    - Use the "exit" command  or <kbd>ctrl</kbd> + <kbd>D</kbd> to terminate the shell.
 
 ## Example
+
+Interactive:
 ```bash
 	$ ./hsh
 	$ ls
 	get_path.c parse_input.c run_command.c shell_header.h super_simple_shell.c user_input.c
 	$
-```
+Non interactive:```
 ```bash
 	$ echo "/bin/ls" | ./hsh
 	get_path.c parse_input.c run_command.c shell_header.h super_simple_shell.c user_input.c
