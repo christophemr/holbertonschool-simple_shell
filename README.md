@@ -47,6 +47,11 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 	get_path.c parse_input.c run_command.c shell_header.h super_simple_shell.c user_input.c
 	$
 ```
+```bash
+	$ echo "/bin/ls" | ./hsh
+	get_path.c parse_input.c run_command.c shell_header.h super_simple_shell.c user_input.c
+	$
+```
 
 ## File Descriptions
 
