@@ -22,14 +22,10 @@ int main(__attribute__((unused)) int argc,
 		if (status == 1)
 			printf("$ ");
 
-		/*recupere l'input*/
 		usrInput = get_user_input();
 
-		/*check si l'input n'a pas fonctionné pour quitter le shell*/
 		if (usrInput == NULL)
 			break;
-		/*remplace le \n de l'input par \0 */
-		/*usrInput[strcspn(usrInput, "\n")] = '\0';*/
 		isbuiltin = check_builtin(usrInput, env);
 		if (isbuiltin == 0)
 		{
