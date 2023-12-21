@@ -38,14 +38,7 @@ char **parse_input(char *str_input)
 	{
 		tokens[index] = strdup(token);
 		if (tokens[index] == NULL)
-		{
-			while (index > 0)
-			{
-				free(tokens[--index]);
-			}
-			free(tokens);
 			exit(EXIT_FAILURE);
-		}
 		index++;
 
 		if (index >= bufferSize)
@@ -54,17 +47,15 @@ char **parse_input(char *str_input)
 			tmp = realloc(tokens, bufferSize * sizeof(char *));
 			if (tmp == NULL)
 			{
-				while (index > 0)
-				{
-					free(tokens[--index]);
-				}
+				free(token);
 				free(tokens);
-				exit(EXIT_FAILURE);
+				return (NULL);
 			}
-			tokens = tmp;
+			check_tokens(tokens);
 		}
 		token = strtok(NULL, " \n\t\r\a");
 	}
+	free(token);
 	tokens[index] = NULL;
 	return (tokens);
 }
