@@ -2,7 +2,7 @@
 /**
  *main - entry point of the simple shell
  *@argc: Number of command-line arguments (unused)
- *@argv: Array of command-line arguments (unused)
+ *@argv: Array of command-line arguments
  *@env: Array of strings representing the environment variables
  *Return: 0 on success
  */
