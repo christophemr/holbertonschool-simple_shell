@@ -22,7 +22,9 @@ void runcmd(char **parsed_Input, char **env, char *shellpath, char *userinput)
 			fprintf(stderr, "%s: %s: No such file or directory\n", shellpath, parsed_Input[0]);
 		else
 		{
+			free(userinput);
 			fprintf(stderr, "%s: 1: %s: not found\n", shellpath, parsed_Input[0]);
+			free_tokens(parsed_Input);
 			exit(127);
 		}
 		return;
@@ -39,6 +41,8 @@ void runcmd(char **parsed_Input, char **env, char *shellpath, char *userinput)
 		if (execve(command_path, parsed_Input, env) == -1)
 		{
 			perror("Execution failed");
+			free(userinput);
+			free_tokens(parsed_Input);
 			free(command_path);
 			exit(127);
 		}
