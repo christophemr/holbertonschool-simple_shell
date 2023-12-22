@@ -10,7 +10,7 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 {
 	char *command_path;
 	pid_t child_pid;
-	int status;
+	int status, cmd_status;
 
 	if (parsed_Input[0][0] == '/' || parsed_Input[0][0] == '.')
 		command_path = strdup(parsed_Input[0]);
@@ -33,17 +33,24 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 		perror("fork failed");
 		free(command_path);
 	}
-	if (child_pid == 0)
+	else if (child_pid == 0)
 	{
 		if (execve(command_path, parsed_Input, env) == -1)
 		{
 			perror("Execution failed");
 			free(command_path);
-			exit(EXIT_FAILURE);
+			exit(127);
 		}
 	} else
 	{
 		waitpid(child_pid, &status, 0);
-		free(command_path);
+
+		if (WIFEXITED(status))
+		{
+			cmd_status = WEXITSTATUS(status);
+			free(command_path);
+			if (cmd_status != 0)
+				exit(cmd_status);
+		}
 	}
 }
