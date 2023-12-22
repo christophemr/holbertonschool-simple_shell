@@ -36,7 +36,7 @@ int main(__attribute__((unused)) int argc,
 				continue;
 			}
 			if (parsedInput[0])
-				runcmd(parsedInput, env, argv[0]);
+				runcmd(parsedInput, env, argv[0], usrInput);
 			free_tokens(parsedInput);
 		}
 		free(usrInput);

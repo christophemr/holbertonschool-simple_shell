@@ -22,6 +22,7 @@ char *get_user_input()
 			fprintf(stderr, "Closing Shell\n");
 		exit(EXIT_FAILURE);
 	}
+
 	if (inputSize > 0 && input[inputSize - 1] == '\n')
 		input[inputSize - 1] = '\0';
 

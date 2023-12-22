@@ -6,7 +6,7 @@
  */
 
 
-void runcmd(char **parsed_Input, char **env, char *shellpath)
+void runcmd(char **parsed_Input, char **env, char *shellpath, char *userinput)
 {
 	char *command_path;
 	pid_t child_pid;
@@ -51,7 +51,12 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 			cmd_status = WEXITSTATUS(status);
 			free(command_path);
 			if (cmd_status != 0)
+			{
+				free(userinput);
+				free_tokens(parsed_Input);
 				exit(cmd_status);
+				
+			}
 		}
 		else
 		{
