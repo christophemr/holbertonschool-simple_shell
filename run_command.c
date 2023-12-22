@@ -32,6 +32,7 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 	{
 		perror("fork failed");
 		free(command_path);
+		return;
 	}
 	else if (child_pid == 0)
 	{
@@ -51,6 +52,10 @@ void runcmd(char **parsed_Input, char **env, char *shellpath)
 			free(command_path);
 			if (cmd_status != 0)
 				exit(cmd_status);
+		}
+		else
+		{
+			free(command_path);
 		}
 	}
 }
